@@ -1,0 +1,22 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local artifacts
+*.log
+dist/
+build/
+.cache/
+
+# Never commit private material
+.env
+*.jks
+*.keystore
+keystore.properties
+private/
+play-console-private/
+screenshots-private/
+*.apk
+*.aab
