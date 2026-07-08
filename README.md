@@ -4,7 +4,10 @@ Static multilingual portfolio homepage for Bernardo Roustand.
 
 ## Current contents
 
-- `index.html` — single-file static website with embedded CSS, JavaScript, and translations.
+- `index.html` — static homepage shell.
+- `styles.css` — portfolio styling.
+- `app.js` — language switch, project cards, translations, and current project status copy.
+- `profile.svg` — selected profile portrait embedded as a text-safe SVG asset.
 - `.gitignore` — excludes local artifacts, release binaries, and private material.
 
 ## Public identity
@@ -23,17 +26,22 @@ The site loads in English by default and includes a top-right language switch fo
 
 The selected language is stored in `localStorage`.
 
-## Project status wording
+## Portfolio project status
 
-The four apps are presented as working beta builds tested on real Android devices. Public release links are marked as pending while the GitHub repositories catch up to the installed versions.
+Updated after the four app repo-sync reports:
+
+- **Bighart Beat:** playable web app plus Android shell; README/CHANGELOG synced; 142 tests passing; phone Phase A checklist pending.
+- **Ping Thing:** Android beta device-confirmed; README synced to Phase 0–3 status; CI green; signed release pending.
+- **Bighart Synth:** Android repo structure corrected; CI green; debug APK artifact produced; phone smoke test pending.
+- **Spectral Camera:** README synced to v1.8.1 state; CI green; production signing pending; spectral/IR effects are simulated, not true infrared.
+
+## Current release blockers
+
+- Production signing / keystore setup for Android releases.
+- Release tags and signed GitHub Releases where applicable.
+- Phone smoke-test checklist completion for Bighart Beat and Bighart Synth.
+- Privacy-policy pages for Play Store readiness.
 
 ## GitHub Pages
 
-To publish:
-
-1. Go to **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select `main` and `/root`.
-4. Save.
-
-GitHub will provide the public URL after deployment.
+This repo is intended to be published from `main` / `/root` using GitHub Pages.
