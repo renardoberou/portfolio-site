@@ -6,8 +6,9 @@ Static multilingual portfolio homepage for Bernardo Roustand.
 
 - `index.html` — static homepage shell.
 - `styles.css` — portfolio styling.
-- `app.js` — language switch, project cards, translations, and current project status copy.
+- `app.js` — language switch, project cards, translations, app-icon rendering, and current project status copy.
 - `profile.svg` — selected profile portrait embedded as a text-safe SVG asset.
+- `icons/` — web-ready SVG exports of the actual Android app icons from the four app repositories.
 - `.gitignore` — excludes local artifacts, release binaries, and private material.
 
 ## Public identity
@@ -28,19 +29,19 @@ The selected language is stored in `localStorage`.
 
 ## Portfolio project status
 
-Updated after the four app repo-sync reports:
+Updated after the four app repo-sync reports and the Ping Thing signed-release confirmation:
 
 - **Bighart Beat:** playable web app plus Android shell; README/CHANGELOG synced; 142 tests passing; phone Phase A checklist pending.
-- **Ping Thing:** Android beta device-confirmed; README synced to Phase 0–3 status; CI green; signed release pending.
+- **Ping Thing:** signed Android release; installed and device-confirmed; public-release ready for direct distribution.
 - **Bighart Synth:** Android repo structure corrected; CI green; debug APK artifact produced; phone smoke test pending.
 - **Spectral Camera:** README synced to v1.8.1 state; CI green; production signing pending; spectral/IR effects are simulated, not true infrared.
 
 ## Current release blockers
 
-- Production signing / keystore setup for Android releases.
-- Release tags and signed GitHub Releases where applicable.
-- Phone smoke-test checklist completion for Bighart Beat and Bighart Synth.
-- Privacy-policy pages for Play Store readiness.
+- Bighart Beat: Phase A phone checklist, then signing/release.
+- Bighart Synth: phone smoke test, then signing/release.
+- Spectral Camera: production signing and store/privacy wording.
+- Play Store privacy-policy URLs and store assets for any Play submission.
 
 ## GitHub Pages
 
