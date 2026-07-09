@@ -5,7 +5,8 @@ Static multilingual portfolio homepage for Bernardo Roustand.
 ## Current contents
 
 - `index.html` — static homepage shell.
-- `styles.css` — portfolio styling.
+- `styles.css` — base portfolio styling.
+- `visuals.css` — cinematic product-visual layer using the supplied screenshots as the hero/card imagery.
 - `app.js` — language switch, project cards, translations, app-icon rendering, and current project status copy.
 - `profile.svg` — selected profile portrait embedded as a text-safe SVG asset.
 - `icons/` — web-ready SVG exports of the Android app icons from the four app repositories. Bighart Synth now uses the waveform/oscilloscope mark rather than the old heart placeholder.
