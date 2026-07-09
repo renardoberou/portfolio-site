@@ -1,0 +1,25 @@
+/* Image quality/layout overrides: use product imagery as contained visuals instead of over-stretched backgrounds. */
+.hero{
+  grid-template-columns:1fr !important;
+  min-height:88vh;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  padding:clamp(96px,13vh,150px) max(30px,calc((100vw - 1160px)/2 + 30px));
+  overflow:hidden;
+  background-color:#100b08;
+}
+.hero>div{max-width:720px;position:relative;z-index:1;}
+.hero .portrait{display:none!important;}
+.card .mark{
+  background-size:auto 100%!important;
+  background-repeat:no-repeat!important;
+  background-position:center top!important;
+  background-color:#080604!important;
+}
+.card .mark::before{
+  background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.10) 52%,rgba(0,0,0,.78))!important;
+}
+@media(max-width:600px){
+  .hero{padding-top:100px;padding-bottom:70px;}
+  .card .mark{height:260px;}
+}
