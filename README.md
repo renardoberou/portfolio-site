@@ -9,7 +9,7 @@ Static multilingual portfolio homepage for Bernardo Roustand.
 - `visuals.css` — cinematic product-visual layer using the supplied screenshots as the hero/card imagery.
 - `image-quality.css` — screenshot layout/hero overrides for better mobile presentation.
 - `hero-sync.js` — applies the Spectral Camera photograph as the full hero visual.
-- `status-sync.js` — patches the current signed-release statuses for Bighart Beat and Spectral Camera after app card rendering.
+- `status-sync.js` — patches the current signed-release statuses and adds the live Ping Thing Gumroad link after app card rendering.
 - `app.js` — language switch, project cards, translations, app-icon rendering, and current project copy.
 - `profile.svg` — selected profile portrait embedded as a text-safe SVG asset.
 - `icons/` — web-ready SVG exports of the Android app icons from the four app repositories.
@@ -31,12 +31,16 @@ The site loads in English by default and includes a top-right language switch fo
 
 The selected language is stored in `localStorage`.
 
+## Live Gumroad product links
+
+- **Ping Thing Android:** https://renardoberou.gumroad.com/l/ping-thing-android
+
 ## Portfolio project status
 
-Updated after the app repo-sync reports and signed-release confirmations:
+Updated after the app repo-sync reports, signed-release confirmations, and the Ping Thing Gumroad landing-page publication:
 
 - **Bighart Beat:** signed `app-v1.0.0` Android release live; signed APK installed; basic device smoke confirmed; extended checklist and distribution listing still pending.
-- **Ping Thing:** signed Android release; installed and device-confirmed; public-release ready for direct distribution.
+- **Ping Thing:** signed Android release; installed and device-confirmed; Gumroad product page live; public-release ready for direct distribution.
 - **Bighart Synth:** signed v1.0.0 release live; developer-tested on device; distribution/Gumroad/Play listing work pending.
 - **Spectral Camera:** signed v1.8.2 release live with APK, AAB, and checksums; simulated spectral/IR effects only; store/privacy wording still required for Play distribution.
 
