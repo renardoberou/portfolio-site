@@ -7,7 +7,7 @@
   };
   const copy={
     en:{
-      note:'Ping Thing, Bighart Synth, and Bighart Beat now have live Gumroad product pages and checkout flows. Spectral Camera is signed and prepared, with its Gumroad landing page still pending.',
+      note:'Ping Thing, Bighart Synth, and Bighart Beat now have live Gumroad product pages and checkout flows. Their cards prioritize a single purchase action; GitHub remains available through the portfolio-level link. Spectral Camera is signed and prepared, with its Gumroad landing page still pending.',
       beat:'Signed app-v1.0.0 release · Gumroad page live · extended checklist pending',
       ping:'Signed Android release · Gumroad page live · public-release ready',
       synth:'Signed v1.0.0 release · Gumroad page live · distribution listing live',
@@ -15,7 +15,7 @@
       gumroad:'Buy on Gumroad'
     },
     pt:{
-      note:'Ping Thing, Bighart Synth e Bighart Beat agora têm páginas Gumroad ao vivo com checkout funcionando. Spectral Camera está assinado e preparado, com a landing page do Gumroad ainda pendente.',
+      note:'Ping Thing, Bighart Synth e Bighart Beat agora têm páginas Gumroad ao vivo com checkout funcionando. Os cards priorizam uma única ação de compra; o GitHub continua disponível no link geral do portfólio. Spectral Camera está assinado e preparado, com a landing page do Gumroad ainda pendente.',
       beat:'Release app-v1.0.0 assinado · página Gumroad ao vivo · checklist estendido pendente',
       ping:'Release Android assinado · página Gumroad ao vivo · pronto para distribuição pública',
       synth:'Release v1.0.0 assinado · página Gumroad ao vivo · listagem de distribuição publicada',
@@ -23,7 +23,7 @@
       gumroad:'Comprar no Gumroad'
     },
     fr:{
-      note:'Ping Thing, Bighart Synth et Bighart Beat ont maintenant des pages Gumroad en ligne avec checkout fonctionnel. Spectral Camera est signé et préparé, avec sa landing page Gumroad encore en attente.',
+      note:'Ping Thing, Bighart Synth et Bighart Beat ont maintenant des pages Gumroad en ligne avec checkout fonctionnel. Leurs cartes privilégient une seule action d’achat; GitHub reste accessible via le lien général du portfolio. Spectral Camera est signé et préparé, avec sa landing page Gumroad encore en attente.',
       beat:'Release app-v1.0.0 signée · page Gumroad en ligne · checklist étendue en attente',
       ping:'Release Android signée · page Gumroad en ligne · prête pour distribution publique',
       synth:'Release v1.0.0 signée · page Gumroad en ligne · listing de distribution publié',
@@ -32,12 +32,13 @@
     }
   };
   function lang(){const l=document.documentElement.lang||'en';return l.startsWith('pt')?'pt':l.startsWith('fr')?'fr':'en'}
-  function ensureGumroadLink(card,d,url){
+  function prepareCommercialCard(card,d,url){
     if(!card||!url)return;
+    card.classList.add('commercial-card');
     let link=card.querySelector('[data-gumroad-product-link]');
     if(!link){
       link=document.createElement('a');
-      link.className='mini';
+      link.className='mini product-buy';
       link.setAttribute('data-gumroad-product-link','true');
       link.target='_blank';
       link.rel='noopener';
@@ -45,6 +46,9 @@
     }
     link.href=url;
     link.textContent=d.gumroad;
+    card.querySelectorAll('.mini').forEach(function(candidate){
+      if(candidate!==link) candidate.remove();
+    });
   }
   function patch(){
     const d=copy[lang()];
@@ -53,21 +57,20 @@
     const cards=document.querySelectorAll('#cards .card');
     if(cards[0]){
       const status=cards[0].querySelector('.status'); if(status) status.textContent=d.beat;
-      const links=cards[0].querySelectorAll('.mini'); if(links[1]) links[1].href='https://github.com/renardoberou/Bighart-Beat/releases/tag/app-v1.0.0';
-      ensureGumroadLink(cards[0],d,urls.beat);
+      prepareCommercialCard(cards[0],d,urls.beat);
     }
     if(cards[1]){
       const status=cards[1].querySelector('.status'); if(status) status.textContent=d.ping;
-      ensureGumroadLink(cards[1],d,urls.ping);
+      prepareCommercialCard(cards[1],d,urls.ping);
     }
     if(cards[2]){
       const status=cards[2].querySelector('.status'); if(status) status.textContent=d.synth;
-      const links=cards[2].querySelectorAll('.mini'); if(links[1]) links[1].href='https://github.com/renardoberou/Bighart-synth-standalone/releases/tag/v1.0.0';
-      ensureGumroadLink(cards[2],d,urls.synth);
+      prepareCommercialCard(cards[2],d,urls.synth);
     }
     if(cards[3]){
       const status=cards[3].querySelector('.status'); if(status) status.textContent=d.spectral;
-      const links=cards[3].querySelectorAll('.mini'); if(links[1]) links[1].href='https://github.com/renardoberou/spectral-camera/releases/tag/v1.8.2';
+      const links=cards[3].querySelectorAll('.mini');
+      if(links[1]) links[1].href='https://github.com/renardoberou/spectral-camera/releases/tag/v1.8.2';
     }
   }
   document.addEventListener('DOMContentLoaded',()=>setTimeout(patch,20));
