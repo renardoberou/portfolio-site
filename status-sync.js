@@ -31,6 +31,14 @@
       gumroad:'Acheter sur Gumroad'
     }
   };
+  function ensureCommerceCss(){
+    if(document.querySelector('link[data-commerce-css]'))return;
+    const link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href='commerce.css';
+    link.setAttribute('data-commerce-css','true');
+    document.head.appendChild(link);
+  }
   function lang(){const l=document.documentElement.lang||'en';return l.startsWith('pt')?'pt':l.startsWith('fr')?'fr':'en'}
   function prepareCommercialCard(card,d,url){
     if(!card||!url)return;
@@ -51,6 +59,7 @@
     });
   }
   function patch(){
+    ensureCommerceCss();
     const d=copy[lang()];
     const note=document.querySelector('[data-i18n="releaseNote"]');
     if(note) note.textContent=d.note;
