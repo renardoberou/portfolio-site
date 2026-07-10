@@ -1,0 +1,37 @@
+/* Conversion-focused product-card actions. */
+.commercial-card{
+  display:flex;
+  flex-direction:column;
+}
+.commercial-card .product-buy{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:min(78%,220px);
+  min-height:46px;
+  margin:22px auto 24px!important;
+  padding:12px 20px;
+  border:1px solid rgba(240,197,109,.72);
+  border-radius:999px;
+  background:linear-gradient(135deg,#f0c56d 0%,#c58b3d 100%);
+  color:#160d08;
+  font-weight:800;
+  font-size:.9rem;
+  letter-spacing:.01em;
+  text-align:center;
+  box-shadow:0 12px 28px rgba(183,126,53,.24);
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+}
+.commercial-card .product-buy:hover,
+.commercial-card .product-buy:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(183,126,53,.34);
+  filter:brightness(1.06);
+}
+.commercial-card .product-buy:focus-visible{
+  outline:3px solid rgba(158,202,225,.72);
+  outline-offset:3px;
+}
+@media(max-width:600px){
+  .commercial-card .product-buy{width:calc(100% - 40px);max-width:none;}
+}
