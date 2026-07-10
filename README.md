@@ -8,8 +8,9 @@ Static multilingual portfolio homepage for Bernardo Roustand.
 - `styles.css` — base portfolio styling.
 - `visuals.css` — cinematic product-visual layer using supplied screenshots as hero/card imagery.
 - `image-quality.css` — screenshot layout/hero overrides for better mobile presentation.
+- `commerce.css` — centered, conversion-focused Gumroad CTA styling for commercial product cards.
 - `hero-sync.js` — applies the Spectral Camera photograph as the full hero visual.
-- `status-sync.js` — patches current signed-release statuses and adds live Gumroad links after app-card rendering.
+- `status-sync.js` — patches current signed-release statuses, removes competing per-card GitHub actions from live Gumroad products, and adds centered Gumroad purchase buttons after app-card rendering.
 - `app.js` — language switch, project cards, translations, app-icon rendering, and current project copy.
 - `profile.svg` — selected profile portrait embedded as a text-safe SVG asset.
 - `icons/` — web-ready SVG exports of the Android app icons from the four app repositories.
@@ -20,6 +21,12 @@ Static multilingual portfolio homepage for Bernardo Roustand.
 - Name: Bernardo Roustand
 - Email: roustandsystems@gmail.com
 - GitHub: https://github.com/Renardoberou
+
+## Product-card CTA strategy
+
+For products with live Gumroad landing pages, each portfolio card presents one primary action: **Buy on Gumroad**. The redundant Source Repo / Status links are removed from those cards to reduce competing calls to action. GitHub remains accessible through the portfolio-level GitHub link for evaluators who want to inspect the development work.
+
+Spectral Camera keeps GitHub/status actions until its Gumroad landing page is published.
 
 ## Language behavior
 
