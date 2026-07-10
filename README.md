@@ -6,10 +6,10 @@ Static multilingual portfolio homepage for Bernardo Roustand.
 
 - `index.html` — static homepage shell.
 - `styles.css` — base portfolio styling.
-- `visuals.css` — cinematic product-visual layer using the supplied screenshots as the hero/card imagery.
+- `visuals.css` — cinematic product-visual layer using supplied screenshots as hero/card imagery.
 - `image-quality.css` — screenshot layout/hero overrides for better mobile presentation.
 - `hero-sync.js` — applies the Spectral Camera photograph as the full hero visual.
-- `status-sync.js` — patches the current signed-release statuses and adds the live Ping Thing Gumroad link after app card rendering.
+- `status-sync.js` — patches current signed-release statuses and adds live Gumroad links after app-card rendering.
 - `app.js` — language switch, project cards, translations, app-icon rendering, and current project copy.
 - `profile.svg` — selected profile portrait embedded as a text-safe SVG asset.
 - `icons/` — web-ready SVG exports of the Android app icons from the four app repositories.
@@ -34,21 +34,24 @@ The selected language is stored in `localStorage`.
 ## Live Gumroad product links
 
 - **Ping Thing Android:** https://renardoberou.gumroad.com/l/ping-thing-android
+- **Bighart Synth Standalone Android:** https://renardoberou.gumroad.com/l/bighart-synth-standalone-android
+- **Bighart Beat Android:** https://renardoberou.gumroad.com/l/bighart-beat-android
+- **Spectral Camera:** pending; planned for publication after its landing page is completed.
 
 ## Portfolio project status
 
-Updated after the app repo-sync reports, signed-release confirmations, and the Ping Thing Gumroad landing-page publication:
+Updated after the app repo-sync reports, signed-release confirmations, and Gumroad landing-page publication:
 
-- **Bighart Beat:** signed `app-v1.0.0` Android release live; signed APK installed; basic device smoke confirmed; extended checklist and distribution listing still pending.
+- **Bighart Beat:** signed `app-v1.0.0` Android release live; basic device smoke confirmed; Gumroad product page live; extended checklist and store distribution still pending.
 - **Ping Thing:** signed Android release; installed and device-confirmed; Gumroad product page live; public-release ready for direct distribution.
-- **Bighart Synth:** signed v1.0.0 release live; developer-tested on device; distribution/Gumroad/Play listing work pending.
-- **Spectral Camera:** signed v1.8.2 release live with APK, AAB, and checksums; simulated spectral/IR effects only; store/privacy wording still required for Play distribution.
+- **Bighart Synth:** signed v1.0.0 release live; developer-tested on device; Gumroad product page live; Play/internal distribution work pending.
+- **Spectral Camera:** signed v1.8.2 release live with APK, AAB, and checksums; Gumroad landing page pending; simulated spectral/IR effects only.
 
 ## Current release blockers
 
-- Bighart Beat: extended device regression checklist, Gumroad attachment / Play internal-test distribution, and Phase C native-deepening items.
-- Bighart Synth: distribution listing work, Play internal testing/privacy-policy preparation, and an optional independent `apksigner verify --verbose` pass before public distribution.
-- Spectral Camera: store/privacy wording, Play metadata, and broader device testing beyond the current verified path.
+- Bighart Beat: extended device regression checklist, Play internal-test distribution, and Phase C native-deepening items.
+- Bighart Synth: Play internal testing/privacy-policy preparation and optional independent `apksigner verify --verbose` pass before broader public distribution.
+- Spectral Camera: Gumroad landing page, store/privacy wording, Play metadata, and broader device testing.
 - Play Store privacy-policy URLs and store assets for any Play submission.
 
 ## GitHub Pages

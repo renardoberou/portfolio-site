@@ -1,24 +1,49 @@
 (function(){
-  const gumroadUrl='https://renardoberou.gumroad.com/l/ping-thing-android';
+  const urls={
+    beat:'https://renardoberou.gumroad.com/l/bighart-beat-android',
+    ping:'https://renardoberou.gumroad.com/l/ping-thing-android',
+    synth:'https://renardoberou.gumroad.com/l/bighart-synth-standalone-android',
+    spectral:null
+  };
   const copy={
-    en:{note:'All four app projects now have signed Android release milestones recorded. Ping Thing also has a live Gumroad product landing page and checkout flow; remaining work is broader distribution/store polish and deeper regression testing where noted.',beat:'Signed app-v1.0.0 release · basic device smoke confirmed · extended checklist pending',ping:'Signed Android release · Gumroad page live · public-release ready',spectral:'Signed v1.8.2 release · APK/AAB + checksums live · simulated IR only',gumroad:'Buy on Gumroad'},
-    pt:{note:'Os quatro projetos de app agora têm marcos de release Android assinado registrados. Ping Thing também tem uma landing page de produto Gumroad ao vivo com checkout; o restante é polimento de distribuição/loja e testes de regressão mais profundos quando indicado.',beat:'Release app-v1.0.0 assinado · smoke test básico confirmado no dispositivo · checklist estendido pendente',ping:'Release Android assinado · página Gumroad ao vivo · pronto para distribuição pública',spectral:'Release v1.8.2 assinado · APK/AAB + checksums publicados · IR apenas simulado',gumroad:'Comprar no Gumroad'},
-    fr:{note:'Les quatre projets d’apps ont maintenant des jalons de release Android signée. Ping Thing dispose aussi d’une landing page Gumroad en ligne avec checkout; le travail restant concerne surtout la distribution/store et les tests de régression plus profonds lorsque signalés.',beat:'Release app-v1.0.0 signée · smoke test basique confirmé sur appareil · checklist étendue en attente',ping:'Release Android signée · page Gumroad en ligne · prête pour distribution publique',spectral:'Release v1.8.2 signée · APK/AAB + checksums publiés · IR simulé uniquement',gumroad:'Acheter sur Gumroad'}
+    en:{
+      note:'Ping Thing, Bighart Synth, and Bighart Beat now have live Gumroad product pages and checkout flows. Spectral Camera is signed and prepared, with its Gumroad landing page still pending.',
+      beat:'Signed app-v1.0.0 release · Gumroad page live · extended checklist pending',
+      ping:'Signed Android release · Gumroad page live · public-release ready',
+      synth:'Signed v1.0.0 release · Gumroad page live · distribution listing live',
+      spectral:'Signed v1.8.2 release · APK/AAB + checksums live · Gumroad page pending · simulated IR only',
+      gumroad:'Buy on Gumroad'
+    },
+    pt:{
+      note:'Ping Thing, Bighart Synth e Bighart Beat agora têm páginas Gumroad ao vivo com checkout funcionando. Spectral Camera está assinado e preparado, com a landing page do Gumroad ainda pendente.',
+      beat:'Release app-v1.0.0 assinado · página Gumroad ao vivo · checklist estendido pendente',
+      ping:'Release Android assinado · página Gumroad ao vivo · pronto para distribuição pública',
+      synth:'Release v1.0.0 assinado · página Gumroad ao vivo · listagem de distribuição publicada',
+      spectral:'Release v1.8.2 assinado · APK/AAB + checksums publicados · página Gumroad pendente · IR apenas simulado',
+      gumroad:'Comprar no Gumroad'
+    },
+    fr:{
+      note:'Ping Thing, Bighart Synth et Bighart Beat ont maintenant des pages Gumroad en ligne avec checkout fonctionnel. Spectral Camera est signé et préparé, avec sa landing page Gumroad encore en attente.',
+      beat:'Release app-v1.0.0 signée · page Gumroad en ligne · checklist étendue en attente',
+      ping:'Release Android signée · page Gumroad en ligne · prête pour distribution publique',
+      synth:'Release v1.0.0 signée · page Gumroad en ligne · listing de distribution publié',
+      spectral:'Release v1.8.2 signée · APK/AAB + checksums publiés · page Gumroad en attente · IR simulé uniquement',
+      gumroad:'Acheter sur Gumroad'
+    }
   };
   function lang(){const l=document.documentElement.lang||'en';return l.startsWith('pt')?'pt':l.startsWith('fr')?'fr':'en'}
-  function ensureGumroadLink(card,d){
-    if(!card)return;
-    const status=card.querySelector('.status'); if(status) status.textContent=d.ping;
-    let link=card.querySelector('[data-ping-gumroad]');
+  function ensureGumroadLink(card,d,url){
+    if(!card||!url)return;
+    let link=card.querySelector('[data-gumroad-product-link]');
     if(!link){
       link=document.createElement('a');
       link.className='mini';
-      link.setAttribute('data-ping-gumroad','true');
+      link.setAttribute('data-gumroad-product-link','true');
       link.target='_blank';
       link.rel='noopener';
       card.appendChild(link);
     }
-    link.href=gumroadUrl;
+    link.href=url;
     link.textContent=d.gumroad;
   }
   function patch(){
@@ -29,8 +54,17 @@
     if(cards[0]){
       const status=cards[0].querySelector('.status'); if(status) status.textContent=d.beat;
       const links=cards[0].querySelectorAll('.mini'); if(links[1]) links[1].href='https://github.com/renardoberou/Bighart-Beat/releases/tag/app-v1.0.0';
+      ensureGumroadLink(cards[0],d,urls.beat);
     }
-    ensureGumroadLink(cards[1],d);
+    if(cards[1]){
+      const status=cards[1].querySelector('.status'); if(status) status.textContent=d.ping;
+      ensureGumroadLink(cards[1],d,urls.ping);
+    }
+    if(cards[2]){
+      const status=cards[2].querySelector('.status'); if(status) status.textContent=d.synth;
+      const links=cards[2].querySelectorAll('.mini'); if(links[1]) links[1].href='https://github.com/renardoberou/Bighart-synth-standalone/releases/tag/v1.0.0';
+      ensureGumroadLink(cards[2],d,urls.synth);
+    }
     if(cards[3]){
       const status=cards[3].querySelector('.status'); if(status) status.textContent=d.spectral;
       const links=cards[3].querySelectorAll('.mini'); if(links[1]) links[1].href='https://github.com/renardoberou/spectral-camera/releases/tag/v1.8.2';
