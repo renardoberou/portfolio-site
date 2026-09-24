@@ -7,27 +7,30 @@
   };
   const copy={
     en:{
-      note:'Ping Thing, Bighart Synth, and Bighart Beat now have live Gumroad product pages and checkout flows. Their cards prioritize a single purchase action; GitHub remains available through the portfolio-level link. Spectral Camera is signed and prepared, with its Gumroad landing page still pending.',
+      note:'Ping Thing, Bighart Synth and Bighart Beat have live Gumroad product pages. Spectral Camera ships as signed releases on GitHub (now v1.21.5), with its Gumroad page still to come.',
       beat:'Signed app-v1.0.0 release · Gumroad page live · extended checklist pending',
       ping:'Signed Android release · Gumroad page live · public-release ready',
       synth:'Signed v1.0.0 release · Gumroad page live · distribution listing live',
-      spectral:'Signed v1.8.2 release · APK/AAB + checksums live · Gumroad page pending · simulated IR only',
+      spectral:'Signed v1.21.5 release · APK/AAB + checksums · Gumroad page pending · simulated IR only',
+      journal:'Field journal',
       gumroad:'Buy on Gumroad'
     },
     pt:{
-      note:'Ping Thing, Bighart Synth e Bighart Beat agora têm páginas Gumroad ao vivo com checkout funcionando. Os cards priorizam uma única ação de compra; o GitHub continua disponível no link geral do portfólio. Spectral Camera está assinado e preparado, com a landing page do Gumroad ainda pendente.',
+      note:'Ping Thing, Bighart Synth e Bighart Beat têm páginas de produto ao vivo no Gumroad. Spectral Camera é distribuído como releases assinados no GitHub (agora v1.21.5), e a página no Gumroad ainda vai sair.',
       beat:'Release app-v1.0.0 assinado · página Gumroad ao vivo · checklist estendido pendente',
       ping:'Release Android assinado · página Gumroad ao vivo · pronto para distribuição pública',
       synth:'Release v1.0.0 assinado · página Gumroad ao vivo · listagem de distribuição publicada',
-      spectral:'Release v1.8.2 assinado · APK/AAB + checksums publicados · página Gumroad pendente · IR apenas simulado',
+      spectral:'Release v1.21.5 assinado · APK/AAB + checksums · página Gumroad pendente · IR apenas simulado',
+      journal:'Diário de campo',
       gumroad:'Comprar no Gumroad'
     },
     fr:{
-      note:'Ping Thing, Bighart Synth et Bighart Beat ont maintenant des pages Gumroad en ligne avec checkout fonctionnel. Leurs cartes privilégient une seule action d’achat; GitHub reste accessible via le lien général du portfolio. Spectral Camera est signé et préparé, avec sa landing page Gumroad encore en attente.',
+      note:'Ping Thing, Bighart Synth et Bighart Beat ont des pages produit en ligne sur Gumroad. Spectral Camera est distribué en releases signées sur GitHub (désormais v1.21.5), sa page Gumroad est encore à venir.',
       beat:'Release app-v1.0.0 signée · page Gumroad en ligne · checklist étendue en attente',
       ping:'Release Android signée · page Gumroad en ligne · prête pour distribution publique',
       synth:'Release v1.0.0 signée · page Gumroad en ligne · listing de distribution publié',
-      spectral:'Release v1.8.2 signée · APK/AAB + checksums publiés · page Gumroad en attente · IR simulé uniquement',
+      spectral:'Release v1.21.5 signée · APK/AAB + checksums · page Gumroad en attente · IR simulé uniquement',
+      journal:'Journal de terrain',
       gumroad:'Acheter sur Gumroad'
     }
   };
@@ -78,8 +81,17 @@
     }
     if(cards[3]){
       const status=cards[3].querySelector('.status'); if(status) status.textContent=d.spectral;
-      const links=cards[3].querySelectorAll('.mini');
-      if(links[1]) links[1].href='https://github.com/renardoberou/spectral-camera/releases/tag/v1.8.2';
+      let journal=cards[3].querySelector('[data-spectral-journal]');
+      if(!journal){
+        journal=document.createElement('a');
+        journal.className='mini';
+        journal.setAttribute('data-spectral-journal','true');
+        journal.href='https://renardoberou.github.io/Spectral-Camera-site/';
+        journal.target='_blank';
+        journal.rel='noopener';
+        cards[3].appendChild(journal);
+      }
+      journal.textContent=d.journal;
     }
   }
   document.addEventListener('DOMContentLoaded',()=>setTimeout(patch,20));

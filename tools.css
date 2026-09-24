@@ -1,0 +1,31 @@
+/* Omarchy desktop-tool cards: screenshots shown whole (they are UI crops, not photos). */
+.tools-head{margin-top:56px}
+.tools-head h3{font-family:Georgia,serif;color:#f0c56d;font-size:clamp(1.6rem,3vw,2.3rem);margin:0 0 10px}
+.tool-card{
+  display:flex;
+  flex-direction:column;
+  border:1px solid #d6ae6233;
+  border-radius:22px;
+  background:linear-gradient(180deg,#241912aa,#0f0a08bb);
+  overflow:hidden;
+}
+.tool-card .shot{
+  height:190px;
+  display:grid;
+  place-items:center;
+  padding:12px;
+  background:#0c0806;
+  border-bottom:1px solid rgba(214,174,98,.22);
+}
+.tool-card .shot img{
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:8px;
+}
+.tool-card h3,.tool-card p,.tool-card .status,.tool-card .tags,.tool-card .tool-links{margin-left:20px;margin-right:20px}
+.tool-card h3{color:#f0c56d;font-size:1.45rem;margin-top:18px;margin-bottom:.2rem}
+.tool-card p{color:#c9b8a4;flex:1}
+.tool-card .tool-links{margin-bottom:20px}

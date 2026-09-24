@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Bernardo Roustand — Business AI Consultant & Creative Technologist</title>
-  <meta name="description" content="Business AI consultant, creative technologist and audio software developer building AI workflows, automation plans, Android music apps and Web Audio tools.">
+  <meta name="description" content="Business AI consultant, creative technologist and audio software developer building AI workflows, automation plans, Android music apps, Web Audio tools and Linux desktop tools.">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="visuals.css">
   <link rel="stylesheet" href="image-quality.css">
+  <link rel="stylesheet" href="tools.css">
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <a class="brand" href="#top">
         <strong>Bernardo Roustand</strong>
-        <span>Business AI Consultant · Creative Technologist · Audio Software</span>
+        <span data-i18n="brandSub">Business AI Consultant · Creative Technologist · Audio Software</span>
       </a>
       <nav>
         <a href="#work" data-i18n="navWork">Work</a>
@@ -33,12 +34,12 @@
   <main class="wrap">
     <section class="hero" id="top">
       <div>
-        <div class="kicker">Business AI consultancy, automation and creative technology</div>
-        <h1>I help businesses turn AI into usable workflows — and build distinctive <span>audio software</span>.</h1>
-        <p class="lead">I’m a Brazil-based business AI consultant, creative technologist and independent developer. I design practical AI workflows, automation plans, corporate training, Web Audio instruments and Android music tools for teams that need clear systems rather than generic AI hype.</p>
+        <div class="kicker" data-i18n="heroKicker">Business AI consultancy, automation and creative technology</div>
+        <h1 data-i18n-html="heroTitle">I help businesses turn AI into usable workflows — and build distinctive <span>audio software</span>.</h1>
+        <p class="lead" data-i18n="heroLead">I’m a Brazil-based business AI consultant, creative technologist and independent developer. I design practical AI workflows, automation plans, corporate training, Web Audio instruments, Android music tools and Linux desktop tools for teams that need clear systems rather than generic AI hype.</p>
         <div class="btns">
-          <a class="btn primary" href="#contact">Hire Me</a>
-          <a class="btn" href="#work">View Products</a>
+          <a class="btn primary" href="#contact" data-i18n="ctaWork">Hire Me</a>
+          <a class="btn" href="#work" data-i18n="ctaProjects">View Work</a>
         </div>
         <div class="links">
           <a href="https://github.com/Renardoberou" target="_blank" rel="noopener">GitHub</a>
@@ -50,53 +51,59 @@
 
     <section class="section" id="work">
       <h2 data-i18n="workTitle">Selected Work</h2>
-      <p class="intro" data-i18n="workIntro">Four working app projects, synced to their respective GitHub repositories with current release status, real screenshots, and app icons.</p>
-      <p class="note" data-i18n="releaseNote">Ping Thing and Bighart Synth are now signed Android releases installed and confirmed on device. Bighart Beat and Spectral Camera remain in documented beta/release-prep states.</p>
+      <p class="intro" data-i18n="workIntro">Four apps, synced to their GitHub repositories with current release status, real screenshots and app icons.</p>
+      <p class="note" data-i18n="releaseNote">Ping Thing, Bighart Synth and Bighart Beat have live Gumroad product pages. Spectral Camera ships as signed releases on GitHub (now v1.21.5), with its Gumroad page still to come.</p>
       <div class="grid" id="cards"></div>
+
+      <div class="tools-head">
+        <h3 data-tools-title>Desktop Tools for Omarchy</h3>
+        <p class="intro" data-tools-intro>Four open-source plugins for Omarchy, the Hyprland-based Linux desktop, written in QML for its Quickshell shell and published in September 2026.</p>
+      </div>
+      <div class="grid" id="tools"></div>
     </section>
 
     <section class="section" id="services">
-      <h2>Available for Hire</h2>
-      <p class="intro">I work on practical AI adoption, workflow automation, corporate training and creative technical products. The emphasis is implementation: what should be automated, what should remain human-reviewed, and what can be shipped quickly.</p>
+      <h2 data-i18n="servicesTitle">Available for Hire</h2>
+      <p class="intro" data-i18n="servicesIntro">I work on practical AI adoption, workflow automation, corporate training and creative technical products. The emphasis is implementation: what should be automated, what should remain human-reviewed, and what can be shipped quickly.</p>
       <div class="services">
         <div class="panel">
-          <h3>Business AI Consulting</h3>
-          <p>AI readiness audits, process mapping, tool selection, implementation roadmaps and risk-aware adoption plans for small businesses and operational teams.</p>
+          <h3 data-i18n="service1Title">Business AI Consulting</h3>
+          <p data-i18n="service1Text">AI readiness audits, process mapping, tool selection, implementation roadmaps and risk-aware adoption plans for small businesses and operational teams.</p>
         </div>
         <div class="panel">
-          <h3>AI Workflows & Automation</h3>
-          <p>Structured prompt systems, research workflows, reporting assistants, internal knowledge-base concepts and lightweight agent workflows for repetitive business tasks.</p>
+          <h3 data-i18n="service2Title">AI Workflows & Automation</h3>
+          <p data-i18n="service2Text">Structured prompt systems, research workflows, reporting assistants, internal knowledge-base concepts and lightweight agent workflows for repetitive business tasks.</p>
         </div>
         <div class="panel">
-          <h3>Corporate AI Training</h3>
-          <p>Practical workshops explaining LLMs, APIs, agents, data security, use cases, limits and safe adoption for non-technical teams and decision-makers.</p>
+          <h3 data-i18n="service3Title">Corporate AI Training</h3>
+          <p data-i18n="service3Text">Practical workshops explaining LLMs, APIs, agents, data security, use cases, limits and safe adoption for non-technical teams and decision-makers.</p>
         </div>
         <div class="panel">
-          <h3>Creative Technology</h3>
-          <p>Custom Web Audio instruments, Android prototypes, interactive sound tools, app QA, sound design systems and experimental interfaces with a clear product direction.</p>
+          <h3 data-i18n="service4Title">Creative Technology</h3>
+          <p data-i18n="service4Text">Custom Web Audio instruments, Android prototypes, Linux desktop tools, interactive sound tools, app QA, sound design systems and experimental interfaces with a clear product direction.</p>
         </div>
       </div>
     </section>
 
     <section class="section" id="hire">
-      <h2>Consulting Packages</h2>
-      <p class="intro">Clear entry points for businesses that want to start using AI without buying unnecessary software or handing critical decisions to a black box.</p>
+      <h2 data-i18n="hireTitle">Consulting Packages</h2>
+      <p class="intro" data-i18n="hireIntro">Clear entry points for businesses that want to start using AI without buying unnecessary software or handing critical decisions to a black box.</p>
       <div class="services">
         <div class="panel">
-          <h3>AI Opportunity Audit</h3>
-          <p>A focused review of your current workflow, bottlenecks and repetitive tasks. Output: prioritized AI opportunities and a short action list.</p>
+          <h3 data-i18n="pkg1Title">AI Opportunity Audit</h3>
+          <p data-i18n="pkg1Text">A focused review of your current workflow, bottlenecks and repetitive tasks. Output: prioritized AI opportunities and a short action list.</p>
         </div>
         <div class="panel">
-          <h3>Workflow Blueprint</h3>
-          <p>A more detailed plan covering tools, prompts, data inputs, human review points, implementation steps and success criteria.</p>
+          <h3 data-i18n="pkg2Title">Workflow Blueprint</h3>
+          <p data-i18n="pkg2Text">A more detailed plan covering tools, prompts, data inputs, human review points, implementation steps and success criteria.</p>
         </div>
         <div class="panel">
-          <h3>Prototype Build</h3>
-          <p>A small proof of concept: internal assistant, research workflow, document process, reporting system or custom creative tool.</p>
+          <h3 data-i18n="pkg3Title">Prototype Build</h3>
+          <p data-i18n="pkg3Text">A small proof of concept: internal assistant, research workflow, document process, reporting system or custom creative tool.</p>
         </div>
         <div class="panel">
-          <h3>AI Workshop</h3>
-          <p>A live training session for teams covering what AI can do, where it fails, how to use it responsibly and how to apply it to real business tasks.</p>
+          <h3 data-i18n="pkg4Title">AI Workshop</h3>
+          <p data-i18n="pkg4Text">A live training session for teams covering what AI can do, where it fails, how to use it responsibly and how to apply it to real business tasks.</p>
         </div>
       </div>
     </section>
@@ -104,7 +111,7 @@
     <section class="section about" id="about">
       <div class="panel">
         <h2 data-i18n="aboutTitle">About Me</h2>
-        <p data-i18n="aboutP1">I’m Bernardo Roustand, an independent developer building browser instruments, Android app prototypes, and AI-assisted workflows. My work sits between software, sound design, research, and product execution.</p>
+        <p data-i18n="aboutP1">I’m Bernardo Roustand, an independent developer building browser instruments, Android apps, Linux desktop tools, and AI-assisted workflows. My work sits between software, sound design, research, and product execution.</p>
         <p data-i18n="aboutP2">I grew up between Switzerland and Brazil and work naturally in English, Portuguese, and French. That background makes me attentive to clarity, translation, and context: interfaces should be precise, usable, and still have a distinct atmosphere.</p>
         <p data-i18n="aboutP3">My current focus is Resonant Systems: small, high-character tools for music, imaging, and creative work. I prefer lean products that can be tested on real devices, documented honestly, and improved through concrete feedback.</p>
       </div>
@@ -118,12 +125,12 @@
     <section class="section" id="contact">
       <div class="contact">
         <div>
-          <h2>Send a short description of the workflow, product or problem.</h2>
-          <p>If you need an AI audit, automation plan, corporate workshop, custom audio tool, Android prototype or technical research support, email me with the business context, the current process and the result you want.</p>
+          <h2 data-i18n="contactTitle">Send a short description of the workflow, product or problem.</h2>
+          <p data-i18n="contactText">If you need an AI audit, automation plan, corporate workshop, custom audio tool, Android prototype or technical research support, email me with the business context, the current process and the result you want.</p>
         </div>
         <div>
-          <a class="btn primary" href="mailto:roustandsystems@gmail.com">Email Me</a><br><br>
-          <a class="btn" href="https://github.com/Renardoberou" target="_blank" rel="noopener">View GitHub</a>
+          <a class="btn primary" href="mailto:roustandsystems@gmail.com" data-i18n="emailMe">Email Me</a><br><br>
+          <a class="btn" href="https://github.com/Renardoberou" target="_blank" rel="noopener" data-i18n="viewGithub">View GitHub</a>
         </div>
       </div>
     </section>
@@ -135,5 +142,6 @@
   <script src="app.js"></script>
   <script src="hero-sync.js"></script>
   <script src="status-sync.js"></script>
+  <script src="tools.js"></script>
 </body>
 </html>
